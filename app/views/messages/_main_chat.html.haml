@@ -1,0 +1,41 @@
+.main
+  .main__chat-main__group-info
+    .main__chat-main__group-info-leftbox
+      .main__chat-main__group-info-leftbox-currentbox
+        test
+      .main__chat-main__group-info-leftbox-minibox
+        .main__chat-main__group-info-leftbox-minibox-
+          Member : 
+        .main__chat-main__group-info-leftbox-minibox-namebox
+          &nbsp
+          masa
+    = link_to "Edit","#",class: "main__chat-main__group-info-rightbox"
+  .main__chat-main__message-list
+    .main__chat-main__message-list-box
+      .main__chat-main__message-list-box-minibox
+        .main__chat-main__message-list-box-minibox-name
+          masa
+        .main__chat-main__message-list-box-minibox-date
+          2019/12/06(fri)20:16:58
+      .main__chat-main__message-list-box
+        こんにちは
+
+      .main__chat-main__message-list-box-minibox
+        .main__chat-main__message-list-box-minibox-name
+          masa
+        .main__chat-main__message-list-box-minibox-date
+          2019/12/06(fri)20:16:58
+      .main__chat-main__message-list-box
+        こんにちは
+
+  .main__chat-main__message-from
+    .main__chat-main__message-from-box
+      .main__chat-main__message-from-box-left
+        .main__chat-main__message-from-box-left-message
+          %input{placeholder: "type a message", id: "text"}
+        .main__chat-main__message-from-box-left-icon
+          %label{class: "input-icon__image", for: "imageinput"}
+            = icon('fas', 'image')
+          %input{type: "file", class: "-icon", id: "imageinput"}
+      .main__chat-main__message-from-box-right
+        Send
