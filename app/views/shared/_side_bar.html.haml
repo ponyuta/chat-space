@@ -5,15 +5,19 @@
         .side__side-bar_user-name-box-name
           = current_user.name
         .side__side-bar_user-name-box-icon
-          = link_to "#" do
-            %i.fas.fa-edit
+          = link_to new_group_path do
+            = icon('fas', 'edit', class: 'icon')
             %span<>
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
+            
 
   .side-group
-    .side-group-main
-      .side-group-main-name
-        aaa
-      .side-group-main-message
-        こんにちは
+    - current_user.groups.each do |group|
+      .side-group-main
+        = link_to group_messages_path(group) do
+          .side-group-main-name 
+            = group.name
+          .side-group-main-message
+            メッセージはまだありません
+  
