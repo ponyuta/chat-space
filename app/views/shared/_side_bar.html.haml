@@ -1,0 +1,19 @@
+.side-bar
+  .side
+    .side__side-bar_user-name
+      .side__side-bar_user-name-box
+        .side__side-bar_user-name-box-name
+          = current_user.name
+        .side__side-bar_user-name-box-icon
+          = link_to "#" do
+            %i.fas.fa-edit
+            %span<>
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
+
+  .side-group
+    .side-group-main
+      .side-group-main-name
+        aaa
+      .side-group-main-message
+        こんにちは
