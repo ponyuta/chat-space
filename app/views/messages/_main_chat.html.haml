@@ -2,14 +2,14 @@
   .main__chat-main__group-info
     .main__chat-main__group-info-leftbox
       .main__chat-main__group-info-leftbox-currentbox
-        test
+        = @group.name
       .main__chat-main__group-info-leftbox-minibox
         .main__chat-main__group-info-leftbox-minibox-
           Member : 
         .main__chat-main__group-info-leftbox-minibox-namebox
-          &nbsp
-          masa
-    = link_to "Edit","#",class: "main__chat-main__group-info-rightbox"
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
+    = link_to "Edit",edit_group_path(@group),class: "main__chat-main__group-info-rightbox"
   .main__chat-main__message-list
 
     .main__chat-main__message-list-box
