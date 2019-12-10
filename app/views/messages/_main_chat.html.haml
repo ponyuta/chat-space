@@ -11,31 +11,15 @@
           masa
     = link_to "Edit","#",class: "main__chat-main__group-info-rightbox"
   .main__chat-main__message-list
+
     .main__chat-main__message-list-box
-      .main__chat-main__message-list-box-minibox
-        .main__chat-main__message-list-box-minibox-name
-          masa
-        .main__chat-main__message-list-box-minibox-date
-          2019/12/06(fri)20:16:58
-      .main__chat-main__message-list-box
-        こんにちは
+      = render @messages
 
-      .main__chat-main__message-list-box-minibox
-        .main__chat-main__message-list-box-minibox-name
-          masa
-        .main__chat-main__message-list-box-minibox-date
-          2019/12/06(fri)20:16:58
-      .main__chat-main__message-list-box
-        こんにちは
-
-  .main__chat-main__message-from
-    .main__chat-main__message-from-box
-      .main__chat-main__message-from-box-left
-        .main__chat-main__message-from-box-left-message
-          %input{placeholder: "type a message", id: "text"}
-        .main__chat-main__message-from-box-left-icon
-          %label{class: "input-icon__image", for: "imageinput"}
-            = icon('fas', 'image')
-          %input{type: "file", class: "-icon", id: "imageinput"}
-      .main__chat-main__message-from-box-right
-        Send
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
