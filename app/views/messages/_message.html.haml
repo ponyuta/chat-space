@@ -1,11 +1,11 @@
-
-.main__chat-main__message-list-box-minibox
-  .main__chat-main__message-list-box-minibox-name
-    = message.user.name
-  .main__chat-main__message-list-box-minibox-date
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
-.main__chat-main__message-list-box
-  - if message.content.present?
-    %p.main__chat-main__message-list-box
-      = message.content
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.main__chat-main__message-list-box-box1{"data-message-id": "#{message.id}"}
+  .main__chat-main__message-list-box-box1-minibox
+    .main__chat-main__message-list-box-box1-minibox-name
+      = message.user.name
+    .main__chat-main__message-list-box-box1-minibox-date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .main__chat-main__message-list-box-box1-content
+    - if message.content.present?
+      %p.main__chat-main__message-list-box-box1-content-p
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
